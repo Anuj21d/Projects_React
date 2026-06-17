@@ -6,7 +6,7 @@ const LeftControls = () => {
       <h2>
         WPM: <span className="text-neutral-50 text-xl">0</span>
       </h2>
-      <h2 className="px-10 border-x border-neutral-600">
+      <h2 className="px-10 border-x-2 border-neutral-800">
         Accuracy: <span className="text-neutral-50 text-xl">100%</span>
       </h2>
       <h2>

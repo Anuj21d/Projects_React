@@ -5,7 +5,7 @@ import ButtonsMode from "./buttons/ButtonsMode";
 const RightControls = () => {
   return (
     <div className="flex items-center  text-neutral-400 text-xl font-medium px-2">
-      <div className="flex items-center gap-2 border-r border-neutral-600 pr-5">
+      <div className="flex items-center gap-2 border-r-2 border-neutral-800 pr-5">
         <h2>Difficulty:</h2>
         <ButtonDIfficulty />
       </div>

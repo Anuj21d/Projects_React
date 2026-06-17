@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { SettingContext } from "../../../../context/SettingContext/SettingContext";
 
 const ButtonsMode = () => {
-  const [mode, setMode] = useState("timed");
+  const { mode, setMode } = useContext(SettingContext);
 
   return (
     <div className="flex items-center gap-1.5">

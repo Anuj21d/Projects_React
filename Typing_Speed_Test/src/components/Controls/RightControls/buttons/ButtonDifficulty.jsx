@@ -1,14 +1,18 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { SettingContext } from "../../../../context/SettingContext/SettingContext";
 
 const ButtonDifficulty = () => {
-  const [selectedDifficulty, setSelectedDifficulty] = useState("easy");
+  const { difficulty, setDifficulty } =
+    useContext(SettingContext);
+
 
   return (
     <div className="flex items-center gap-1.5">
       <button
-        onClick={() => setSelectedDifficulty("easy")}
+        onClick={() => setDifficulty("easy")}
         className={`text-[16px] px-2 py-1 rounded-lg border-2 ${
-          selectedDifficulty === "easy"
+          difficulty === "easy"
             ? "border-blue-400 text-blue-400"
             : "border-neutral-600 text-neutral-50"
         }`}
@@ -17,9 +21,9 @@ const ButtonDifficulty = () => {
       </button>
 
       <button
-        onClick={() => setSelectedDifficulty("medium")}
+        onClick={() => setDifficulty("medium")}
         className={`text-[16px] px-2 py-1 rounded-lg border-2 ${
-          selectedDifficulty === "medium"
+          difficulty === "medium"
             ? "border-blue-400 text-blue-400"
             : "border-neutral-600 text-neutral-50"
         }`}
@@ -28,9 +32,9 @@ const ButtonDifficulty = () => {
       </button>
 
       <button
-        onClick={() => setSelectedDifficulty("hard")}
+        onClick={() => setDifficulty("hard")}
         className={`text-[16px] px-2 py-1 rounded-lg border-2 ${
-          selectedDifficulty === "hard"
+          difficulty === "hard"
             ? "border-blue-400 text-blue-400"
             : "border-neutral-600 text-neutral-50"
         }`}
