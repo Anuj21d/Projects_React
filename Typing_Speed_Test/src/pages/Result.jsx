@@ -5,6 +5,8 @@ import ResultButtons from "../components/Result/ResultButtons/ResultButtons";
 import Star1 from "../assets/images/pattern-star-1.svg";
 import Star2 from "../assets/images/pattern-star-2.svg";
 import { TestContext } from "/src/context/TestContext/TestContext.jsx";
+import BeatImg from "/src/assets/images/pattern-confetti.svg";
+import Cheer from "/src/assets/images/icon-new-pb.svg";
 
 const Result = () => {
   const { wpm, bestWpm } = useContext(TestContext);
@@ -21,17 +23,14 @@ const Result = () => {
       </div>
       {wpm > bestWpm ? (
         <div className="absolute bottom-0">
-          <img
-            src="/src/assets/images/pattern-confetti.svg"
-            alt="You beat it"
-          />
+          <img src={BeatImg} alt="You beat it" />
         </div>
       ) : (
         ""
       )}
       {wpm > bestWpm ? (
         <div className="absolute top-[20%] right-[30%]">
-          <img src="/src/assets/images/icon-new-pb.svg" alt="" />
+          <img src={Cheer} alt="" />
         </div>
       ) : (
         ""
