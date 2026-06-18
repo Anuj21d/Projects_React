@@ -1,36 +1,38 @@
 import React from "react";
 import { useContext } from "react";
 import { TestContext } from "/src/context/TestContext/TestContext.jsx";
-import { SettingContext } from "/src/context/SettingContext/SettingContext.jsx";
 import ResetButton from "./ResetButton";
+import { useEffect } from "react";
+import { SettingContext } from "/src/context/SettingContext/SettingContext.jsx";
 
 const PassageLayer = () => {
-  const { data } = useContext(TestContext);
+  const { currentPassage, isStarted, generatePassage , typedText} =
+    useContext(TestContext);
   const { difficulty } = useContext(SettingContext);
-  const { isStarted } = useContext(TestContext);
-  let shuffled = [];
-  let randomFive = [];
-
-  const passage = data[difficulty];
-  if (difficulty == "easy") {
-    shuffled = [...passage].sort(() => Math.random() - 0.6);
-    randomFive = shuffled.slice(0, 6);
-  } else if (difficulty == "medium") {
-    shuffled = [...passage].sort(() => Math.random() - 0.4);
-    randomFive = shuffled.slice(0, 4);
-  } else {
-    shuffled = [...passage].sort(() => Math.random() - 0.3);
-    randomFive = shuffled.slice(0, 3);
-  }
-
+  useEffect(() => {
+    generatePassage(difficulty);
+  }, [difficulty]);
   return (
-    <div className={"p-8"}>
+    <div className="p-8">
       <p
-        className={`text-4xl leading-relaxed text-neutral-50 font-normal text-left ${isStarted ? "" : "blur-sm"}`}
+        className={`text-4xl leading-relaxed text-neutral-50 font-normal text-left ${
+          isStarted ? "" : "blur-sm"
+        }`}
       >
-        {randomFive.map((passage) => {
-          return passage.text;
-        })}
+        {currentPassage?.text.split("").map((char, index) => (
+          <span
+            key={index}
+            className={
+              typedText[index] === undefined
+                ? "text-neutral-500"
+                : typedText[index] === char
+                  ? "text-green-400"
+                  : "text-red-400"
+            }
+          >
+            {char}
+          </span>
+        ))}
       </p>
     </div>
   );

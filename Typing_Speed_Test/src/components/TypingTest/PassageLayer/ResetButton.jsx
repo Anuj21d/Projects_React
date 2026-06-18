@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { TestContext } from "/src/context/TestContext/TestContext.jsx";
+import restartIcon from "/src/assets/images/icon-restart.svg";
 
 const ResetButton = () => {
   const { resetTest, isStarted } = useContext(TestContext);
@@ -12,7 +13,7 @@ const ResetButton = () => {
           onClick={resetTest}
         >
           Restart Test 
-          <img src="/src/assets/images/icon-restart.svg"/>
+          <img src={restartIcon} alt="restartIcon"/>
         </button>
       )}
     </div>
