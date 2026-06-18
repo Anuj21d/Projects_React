@@ -8,9 +8,9 @@ const ButtonsMode = () => {
   return (
     <div className="flex items-center gap-1.5">
       <button
-        onClick={() => setMode("timed")}
+        onClick={() => setMode("60s")}
         className={`text-[16px] px-2 py-1 rounded-lg border-2 ${
-          mode === "timed"
+          mode === "60s"
             ? "border-blue-400 text-blue-400"
             : "border-neutral-600 text-neutral-50"
         }`}

@@ -4,7 +4,7 @@ import { TestContext } from "/src/context/TestContext/TestContext.jsx";
 import restartIcon from "/src/assets/images/icon-restart.svg";
 
 const ResetButton = () => {
-  const { resetTest, isStarted } = useContext(TestContext);
+  const { resetTest, isStarted  } = useContext(TestContext);
   return (
     <div className="flex justify-center mt-4 p-10 border-t-2 border-neutral-800">
       {isStarted && (

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TestContext } from "/src/context/TestContext/TestContext.jsx";
 
 const Header = () => {
+  const { bestWpm } = useContext(TestContext);
   return (
     <div className="flex justify-between items-center py-8">
       <img src="/src/assets/images/logo-large.svg" alt="Logo Svg" />
@@ -10,7 +12,7 @@ const Header = () => {
           alt="Trophy Logo"
         />
         <h2>
-          Personal best : <span className="text-neutral-50">92 WPM</span>
+          Personal best : <span className="text-neutral-50">{bestWpm} WPM</span>
         </h2>
       </div>
     </div>

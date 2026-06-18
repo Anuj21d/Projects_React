@@ -1,12 +1,10 @@
-// context/SettingsContext.jsx
-
 import { createContext, useState } from "react";
 
 export const SettingContext = createContext();
 
 const SettingsProvider = ({ children }) => {
   const [difficulty, setDifficulty] = useState("easy");
-  const [mode, setMode] = useState("timed");
+  const [mode, setMode] = useState("60s");
 
   return (
     <SettingContext.Provider
