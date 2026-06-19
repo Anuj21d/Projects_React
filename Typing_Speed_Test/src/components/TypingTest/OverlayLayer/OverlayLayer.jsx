@@ -9,7 +9,7 @@ const OverlayLayer = () => {
     useContext(TestContext);
   const { difficulty } = useContext(SettingContext);
   return (
-    <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-white">
+    <div className="absolute top-0 left-0 w-full lg:h-full h-dvw flex flex-col items-center justify-center text-white">
       <button
         onClick={() => {
           setIsStarted(true);

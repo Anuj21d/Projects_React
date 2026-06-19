@@ -8,11 +8,11 @@ const ResultButtons = () => {
   const navigate = useNavigate();
   const { resetTest } = useContext(TestContext);
   return (
-    <div className="flex flex-col gap-15 justify-center items-center z-10">
+    <div className="flex flex-col lg:gap-15 justify-center items-center z-10 w-full">
       <div>
         <Scores />
       </div>
-      <div>
+      <div className="m-8">
         <button
           className="flex items-center justify-center gap-4 text-xl px-5 py-4 bg-neutral-50 font-semibold rounded-xl active:scale-90"
           onClick={() => {

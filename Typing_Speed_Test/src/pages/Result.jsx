@@ -11,14 +11,14 @@ import Cheer from "/src/assets/images/icon-new-pb.svg";
 const Result = () => {
   const { wpm, bestWpm } = useContext(TestContext);
   return (
-    <div className="flex w-full flex-col items-center justify-center">
+    <div className="flex w-full lg:pt-25 pt-10 flex-col">
       <ResultImages />
       <ResultText />
       <ResultButtons />
-      <div className="absolute top-[60%] right-[10%]">
+      <div className="absolute lg:top-[60%] lg:right-[10%] top-[70%] right-[5%] lg:scale-100 scale-70">
         <img src={Star1} alt="Star1" />
       </div>
-      <div className="absolute top-[30%] left-[15%]">
+      <div className="absolute lg:top-[30%] lg:left-[15%] top-[15%] left-[7%] lg:scale-100 scale-75">
         <img src={Star2} alt="Star2" />
       </div>
       {wpm > bestWpm ? (
@@ -29,7 +29,7 @@ const Result = () => {
         ""
       )}
       {wpm > bestWpm ? (
-        <div className="absolute top-[20%] right-[30%]">
+        <div className="absolute lg:top-[20%] lg:right-[30%] top-[35%] right-[5%]">
           <img src={Cheer} alt="" />
         </div>
       ) : (
