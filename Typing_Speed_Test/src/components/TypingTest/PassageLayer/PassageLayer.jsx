@@ -14,11 +14,10 @@ const PassageLayer = () => {
   }, [difficulty]);
 
   const currentIndex = typedText.length;
-  console.log(data[difficulty][0].text);
   return (
-    <div className="p-8">
+    <div className="lg:p-8 ">
       <p
-        className={`text-4xl leading-relaxed text-neutral-50 font-normal text-left ${
+        className={`lg:text-4xl text-3xl leading-relaxed text-neutral-50 font-normal text-left ${
           isStarted ? "" : "blur-sm"
         }`}
       >

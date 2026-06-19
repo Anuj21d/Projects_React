@@ -12,7 +12,7 @@ const App = () => {
   const {difficulty} = useContext(SettingContext);
 
   return (
-    <div className={`bg-neutral-900 font-sora px-25 h-screen`}>
+    <div className={`bg-neutral-900 font-sora px-5 lg:px-25 lg:h-screen h-full w-screen lg:w-full`}>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />

@@ -7,7 +7,7 @@ import { TestContext } from "/src/context/TestContext/TestContext.jsx"
 const TypingTest = () => {
  const { isStarted } = useContext(TestContext);
   return (
-    <div className='relative p-4'>
+    <div className='relative lg:p-4 p-3'>
       <PassageLayer />
       <TypingInput />
       {!isStarted && <OverlayLayer />}

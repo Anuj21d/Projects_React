@@ -4,7 +4,7 @@ import RightControls from './RightControls/RightControls'
 
 const Controls = () => {
   return (
-    <div className='flex justify-between items-center py-4 border-b-2 border-neutral-800'>
+    <div className='flex lg:flex-row flex-col gap-8  lg:justify-between items-center py-8 lg:py-4 border-b-2 border-neutral-800'>
       <LeftControls />
       <RightControls />
     </div>
