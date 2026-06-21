@@ -1,18 +1,12 @@
-import React from 'react'
 import Header from './components/Header/Header'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Result from './pages/Result'
-import { useContext } from 'react'
-import { SettingContext } from './context/SettingContext/SettingContext'
 
 
 const App = () => {
-
-  const {difficulty} = useContext(SettingContext);
-
   return (
-    <div className={`bg-neutral-900 font-sora px-5 lg:px-25 lg:h-screen h-full w-screen lg:w-full`}>
+    <div className="min-h-dvh w-full overflow-x-hidden bg-neutral-900 px-5 font-sora lg:px-25">
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />

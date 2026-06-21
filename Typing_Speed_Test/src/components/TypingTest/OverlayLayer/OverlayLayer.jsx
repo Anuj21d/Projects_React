@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { TestContext } from "/src/context/TestContext/TestContext.jsx";
 import { SettingContext } from "/src/context/SettingContext/SettingContext.jsx";
@@ -9,7 +7,7 @@ const OverlayLayer = () => {
     useContext(TestContext);
   const { difficulty } = useContext(SettingContext);
   return (
-    <div className="absolute top-0 left-0 w-full lg:h-full h-dvw flex flex-col items-center justify-center text-white">
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
       <button
         onClick={() => {
           setIsStarted(true);

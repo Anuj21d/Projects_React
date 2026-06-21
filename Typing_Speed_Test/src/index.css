@@ -4,3 +4,13 @@
 @theme{
     --font-sora: "Sora", sans-serif;
 }
+
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+body {
+    background-color: #171717;
+}

@@ -24,7 +24,6 @@ const Home = () => {
       <Controls />
       <TypingTest />
       <ResetButton />
-      {mode === "60s" ? <span className="absolute top-[18%] right-[5%] p-5 bg-green-400 rounded-full font-bold text-neutral-50 text-shadow-xs text-shadow-black">{timeLeft}s</span> : ""}
     </div>
   );
 };
