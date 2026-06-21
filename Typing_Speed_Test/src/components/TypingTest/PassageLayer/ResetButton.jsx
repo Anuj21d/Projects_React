@@ -1,6 +1,5 @@
-import React from "react";
 import { useContext } from "react";
-import { TestContext } from "/src/context/TestContext/TestContext.jsx";
+import { TestContext } from "/src/context/TestContext/test-context.js";
 import restartIcon from "/src/assets/images/icon-restart.svg";
 
 const ResetButton = () => {

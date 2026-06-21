@@ -1,6 +1,5 @@
-import React from "react";
 import { useContext } from "react";
-import { TestContext } from "/src/context/TestContext/TestContext.jsx";
+import { TestContext } from "/src/context/TestContext/test-context.js";
 
 const Scores = () => {
   const { correctChars, incorrectChars , accuracy ,wpm } = useContext(TestContext);

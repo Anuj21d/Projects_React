@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import restartIcon from "/src/assets/images/icon-restart2.svg";
 import Scores from "./Scores";
 import { useNavigate } from "react-router-dom";
-import { TestContext } from "/src/context/TestContext/TestContext.jsx";
+import { TestContext } from "/src/context/TestContext/test-context.js";
 
 const ResultButtons = () => {
   const navigate = useNavigate();

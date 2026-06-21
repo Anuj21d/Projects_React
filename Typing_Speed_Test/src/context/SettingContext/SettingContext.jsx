@@ -1,6 +1,5 @@
-import { createContext, useState } from "react";
-
-export const SettingContext = createContext();
+import { useState } from "react";
+import { SettingContext } from "./setting-context.js";
 
 const SettingsProvider = ({ children }) => {
   const [difficulty, setDifficulty] = useState("easy");

@@ -1,7 +1,4 @@
-import React from "react";
 import completedIcon from "../../../assets/images/icon-completed.svg";
-import star1 from "../../../assets/images/pattern-star-1.svg";
-import star2 from "../../../assets/images/pattern-star-2.svg";
 
 const ResultImages = () => {
   return (

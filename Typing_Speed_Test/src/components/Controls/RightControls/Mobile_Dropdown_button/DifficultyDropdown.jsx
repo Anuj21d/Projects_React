@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { SettingContext } from "../../../../context/SettingContext/SettingContext";
+import { useContext } from "react";
+import { SettingContext } from "../../../../context/SettingContext/setting-context.js";
 
 const DifficultyDropdown = () => {
   const { difficulty, setDifficulty } = useContext(SettingContext);

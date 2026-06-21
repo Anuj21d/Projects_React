@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { TestContext } from "/src/context/TestContext/TestContext.jsx";
+import { useContext } from "react";
+import { TestContext } from "/src/context/TestContext/test-context.js";
 import Logo from "../../assets/images/logo-large.svg";
 import Trophy from "../../assets/images/icon-personal-best.svg";
 import logosm from "../../assets/images/logo-small.svg";

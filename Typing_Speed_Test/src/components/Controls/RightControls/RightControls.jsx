@@ -1,4 +1,3 @@
-import React from "react";
 import ButtonDIfficulty from "./buttons/ButtonDifficulty";
 import ButtonsMode from "./buttons/ButtonsMode";
 import DifficultyDropdown from "./Mobile_Dropdown_button/DifficultyDropdown";

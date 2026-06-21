@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { TestContext } from "/src/context/TestContext/TestContext.jsx";
-import { SettingContext } from "/src/context/SettingContext/SettingContext.jsx";
+import { TestContext } from "/src/context/TestContext/test-context.js";
+import { SettingContext } from "/src/context/SettingContext/setting-context.js";
 
 const OverlayLayer = () => {
   const { isStarted, setIsStarted, generatePassage, inputRef } =

@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import ResultImages from "../components/Result/ResultImages/ResultImageComplete";
 import ResultText from "../components/Result/ResultText/ResultText";
 import ResultButtons from "../components/Result/ResultButtons/ResultButtons";
 import Star1 from "../assets/images/pattern-star-1.svg";
 import Star2 from "../assets/images/pattern-star-2.svg";
-import { TestContext } from "/src/context/TestContext/TestContext.jsx";
+import { TestContext } from "/src/context/TestContext/test-context.js";
 import BeatImg from "/src/assets/images/pattern-confetti.svg";
 import Cheer from "/src/assets/images/icon-new-pb.svg";
 

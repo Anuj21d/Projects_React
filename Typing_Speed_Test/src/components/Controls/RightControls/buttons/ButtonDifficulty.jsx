@@ -1,6 +1,5 @@
-import React, { useState } from "react";
 import { useContext } from "react";
-import { SettingContext } from "../../../../context/SettingContext/SettingContext";
+import { SettingContext } from "../../../../context/SettingContext/setting-context.js";
 
 const ButtonDifficulty = () => {
   const { difficulty, setDifficulty } =

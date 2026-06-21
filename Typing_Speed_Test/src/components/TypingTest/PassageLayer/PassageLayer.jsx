@@ -1,17 +1,15 @@
-import React from "react";
-import { useContext } from "react";
-import { TestContext } from "/src/context/TestContext/TestContext.jsx";
-import ResetButton from "./ResetButton";
-import { useEffect } from "react";
-import { SettingContext } from "/src/context/SettingContext/SettingContext.jsx";
+import { useContext, useEffect } from "react";
+import { TestContext } from "/src/context/TestContext/test-context.js";
+import { SettingContext } from "/src/context/SettingContext/setting-context.js";
 
 const PassageLayer = () => {
-  const { currentPassage, isStarted, generatePassage, typedText, data } =
+  const { currentPassage, isStarted, generatePassage, typedText } =
     useContext(TestContext);
   const { difficulty } = useContext(SettingContext);
+
   useEffect(() => {
     generatePassage(difficulty);
-  }, [difficulty]);
+  }, [difficulty, generatePassage]);
 
   const currentIndex = typedText.length;
   return (

@@ -1,5 +1,3 @@
-import React from "react";
-
 const ResultText = () => {
   return (
     <div className="lg:p-8 py-5 flex justify-center flex-col items-center">
