@@ -23,6 +23,10 @@ app.post('/', async (req, res) => {
       return res.status(400).json({ success: false, error: "No image provided." });
     }
 
+    if (!process.env.GEMINI_API_KEY) {
+      return res.status(500).json({ success: false, error: "Server Configuration Error: The GEMINI_API_KEY environment variable is missing on your hosting provider (Render)." });
+    }
+
     // Prepare the prompt for the AI
     const prompt = `
       You are an expert art critic and social media manager.
