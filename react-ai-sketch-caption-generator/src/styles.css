@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", sans-serif;
+  --color-ink: #1a1a1a;
+  --color-primary: #9f376f;
+  --color-primary-bright: #ff85c0;
+  --color-secondary: #fdd73b;
+  --color-tertiary: #55b7ea;
+  --color-surface: #f9fafb;
+  --color-muted-text: #544249;
+  --color-footer: #edeeef;
+  --shadow-hard-sm: 2px 2px 0 #1a1a1a;
+  --shadow-hard: 4px 4px 0 #1a1a1a;
+  --shadow-hard-lg: 7px 7px 0 #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f8f9fa] font-sans text-ink;
+  }
+
+  button,
+  label {
+    @apply font-sans;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
