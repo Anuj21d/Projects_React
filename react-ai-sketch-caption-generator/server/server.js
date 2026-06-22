@@ -33,19 +33,49 @@ app.post('/', async (req, res) => {
       Hashtags: [#tag1 #tag2 #tag3]
     `;
 
-    // Send to Gemini
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
-    const response = await model.generateContent([
-      prompt,
-      {
-        inlineData: {
-          data: image,
-          mimeType: mimeType || 'image/jpeg'
-        }
-      }
-    ]);
+    // Fetch available models to avoid hardcoding and handle 503 errors gracefully
+    const modelsResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${process.env.GEMINI_API_KEY}`);
+    const modelsData = await modelsResponse.json();
+    
+    let availableModels = ["gemini-2.0-flash"]; // Default fallback
+    if (modelsData.models) {
+      availableModels = modelsData.models
+        .map(m => m.name.replace('models/', ''))
+        .filter(n => n.includes('flash') && !n.includes('tts'));
+      
+      // Prioritize 2.0-flash to avoid 2.5-flash high demand spikes initially
+      availableModels.sort((a, b) => (a === 'gemini-2.0-flash' ? -1 : b === 'gemini-2.0-flash' ? 1 : 0));
+    }
 
-    const resultText = response.response.text();
+    let resultText = "";
+    let lastError = null;
+
+    // Try available models one by one
+    for (const modelName of availableModels) {
+      try {
+        console.log(`Trying model: ${modelName}`);
+        const model = genAI.getGenerativeModel({ model: modelName });
+        const response = await model.generateContent([
+          prompt,
+          {
+            inlineData: {
+              data: image,
+              mimeType: mimeType || 'image/jpeg'
+            }
+          }
+        ]);
+        resultText = response.response.text();
+        console.log(`Successfully generated content using ${modelName}`);
+        break; // Success, exit loop
+      } catch (err) {
+        console.error(`Model ${modelName} failed:`, err.message);
+        lastError = err;
+      }
+    }
+
+    if (!resultText) {
+      throw lastError || new Error("All available models failed.");
+    }
 
     res.json({ success: true, result: resultText });
   } catch (error) {

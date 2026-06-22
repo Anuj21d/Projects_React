@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState } from 
 const AppContext = createContext(null);
 
 const STORAGE_KEY = "capmesketch-state";
-const API_URL = "http://localhost:8787";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8787";
 
 const defaultResult = {
   caption:
